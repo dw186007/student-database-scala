@@ -1,0 +1,37 @@
+@(studentForm: Form[Student], companies: Seq[(String, String)])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main {
+    
+    <h1>Add a student</h1>
+    
+    @form(routes.Application.save()) {
+        
+        <fieldset>
+        
+            @inputText(studentForm("name"), '_label -> "Student name", '_help -> "")
+            @inputText(studentForm("debts"), '_label -> "Count of debts", '_help -> "")
+            @inputDate(studentForm("introduced"), '_label -> "Introduced date", '_help -> "")
+            @inputDate(studentForm("discontinued"), '_label -> "Discontinued date", '_help -> "")
+
+            @select(
+                studentForm("department"),
+                companies, 
+                '_label -> "Department", '_default -> "-- Choose a department --",
+                '_showConstraints -> false
+            )
+            
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this student" class="btn primary"> or
+            <a href="@routes.Application.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

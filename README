@@ -1,0 +1,9 @@
+This is a classic Play CRUD application, backed by a JDBC MySQL database.
+Based on "computer-database-scala" tutorial, migrated from H2 to MySQL.
+Developed for university RDBMS course.
+
+It demonstrates:
+
+- Accessing a JDBC database, using Anorm.
+- Achieving, table pagination and CRUD forms.
+- Integrating with a CSS framework (Twitter Bootstrap ).
